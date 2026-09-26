@@ -1,0 +1,21 @@
+@model HvtStudent
+@{
+    ViewData["Title"] = "Thông tin sinh viên";
+}
+
+<div class="card border-0 shadow-sm mx-auto form-card">
+    <div class="card-body p-4 p-md-5">
+        <h1 class="h3 mb-4">Thông tin sinh viên</h1>
+        <dl class="row">
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.MaSV)</dt><dd class="col-sm-8">@Model.MaSV</dd>
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.HoTen)</dt><dd class="col-sm-8">@Model.HoTen</dd>
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.GioiTinh)</dt><dd class="col-sm-8">@(Model.GioiTinh ?? "—")</dd>
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.NgaySinh)</dt><dd class="col-sm-8">@(Model.NgaySinh?.ToString("dd/MM/yyyy") ?? "—")</dd>
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt><dd class="col-sm-8">@(Model.Email ?? "—")</dd>
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.SoDienThoai)</dt><dd class="col-sm-8">@(Model.SoDienThoai ?? "—")</dd>
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.DangHoc)</dt><dd class="col-sm-8">@(Model.DangHoc ? "Đang học" : "Đã nghỉ")</dd>
+        </dl>
+        <a asp-action="Edit" asp-route-id="@Model.MaSV" class="btn btn-primary">Chỉnh sửa</a>
+        <a asp-action="Index" class="btn btn-outline-secondary ms-2">Quay lại</a>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Thông tin sinh viên";
+}
+
+<div class="container py-4">
+    <div class="card border-0 shadow-sm mx-auto" style="max-width: 640px;">
+        <div class="card-header bg-primary text-white py-3">
+            <h1 class="h4 mb-0">Thông tin sinh viên</h1>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-4">Họ và tên</dt>
+                <dd class="col-sm-8">@ViewBag.HoTen</dd>
+                <dt class="col-sm-4">Mã sinh viên</dt>
+                <dd class="col-sm-8">@ViewBag.MaSV</dd>
+                <dt class="col-sm-4">Lớp</dt>
+                <dd class="col-sm-8">@ViewBag.Lop</dd>
+            </dl>
+        </div>
+    </div>
+</div>

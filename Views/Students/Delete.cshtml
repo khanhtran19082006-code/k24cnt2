@@ -1,0 +1,20 @@
+@model HvtStudent
+@{
+    ViewData["Title"] = "Xóa sinh viên";
+}
+
+<div class="card border-danger border-0 shadow-sm mx-auto form-card">
+    <div class="card-body p-4 p-md-5">
+        <h1 class="h3 text-danger">Xóa sinh viên</h1>
+        <p>Bạn có chắc muốn xóa sinh viên <strong>@Model.HoTen</strong> (@Model.MaSV)?</p>
+        <dl class="row">
+            <dt class="col-sm-4">Email</dt><dd class="col-sm-8">@(Model.Email ?? "—")</dd>
+            <dt class="col-sm-4">Số điện thoại</dt><dd class="col-sm-8">@(Model.SoDienThoai ?? "—")</dd>
+        </dl>
+        <form asp-action="Delete" asp-route-id="@Model.MaSV" method="post">
+            <input type="hidden" asp-for="MaSV" />
+            <button type="submit" class="btn btn-danger">Xóa</button>
+            <a asp-action="Index" class="btn btn-outline-secondary ms-2">Hủy</a>
+        </form>
+    </div>
+</div>
